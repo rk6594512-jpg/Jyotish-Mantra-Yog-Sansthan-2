@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>आचार्य तरुण | ज्योतिष • मंत्र चिकित्सा • यज्ञ संस्थान</title>
+<meta name="description" content="आचार्य तरुण ज्योतिष संस्थान - कुंडली निर्माण, हस्तरेखा, वास्तु, विवाह बाधा, पितृ यज्ञ, मंत्र चिकित्सा, ऑनलाइन परामर्श।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Tiro+Devanagari+Hindi:ital@0;1&family=Mukta:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{
+  --maroon:#5e0c0c; --maroon2:#7a1212; --maroon-dark:#2b0606;
+  --saffron:#ff8a00; --saffron2:#ffb300; --gold:#c9a227; --gold-light:#f5d67b; --gold-dark:#8a6d1b;
+  --cream:#fff8e8; --cream2:#fff1cf; --paper:#fffdf4; --ink:#2b1a10; --muted:#7a6a5a;
+  --green:#1a7a3a; --wa:#25D366;
+  --shadow:0 18px 50px rgba(94,12,12,.18);
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Mukta',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;line-height:1.7}
+h1,h2,h3,.display{font-family:'Yatra One',system-ui;line-height:1.25;color:var(--maroon-dark)}
+.serif{font-family:'Tiro Devanagari Hindi',serif}
+.container{max-width:1220px;margin:auto;padding:0 20px}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+section{position:relative}
+/* Preloader */
+#preloader{position:fixed;inset:0;background:radial-gradient(circle at 50% 40%,#7a1212,#200404 75%);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gold-light);transition:opacity .6s,visibility .6s}
+#preloader.done{opacity:0;visibility:hidden}
+.om-loader{font-family:'Yatra One';font-size:90px;line-height:1;animation:omPulse 1.6s ease-in-out infinite;text-shadow:0 0 40px rgba(255,179,0,.7)}
+@keyframes omPulse{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.12);opacity:1}}
+.load-bar{width:220px;height:4px;background:rgba(255,255,255,.15);border-radius:99px;margin-top:18px;overflow:hidden}
+.load-bar span{display:block;height:100%;width:40%;background:linear-gradient(90deg,var(--saffron),var(--gold-light));border-radius:99px;animation:loadSlide 1.2s infinite}
+@keyframes loadSlide{0%{transform:translateX(-100%)}100%{transform:translateX(550%)}}
+/* Topbar */
+.topbar{background:linear-gradient(90deg,#200404,#5e0c0c,#200404);color:#ffe9b5;font-size:13.5px;padding:8px 0;border-bottom:1px solid rgba(201,162,39,.4);position:relative;z-index:60}
+.topbar .container{display:flex;align-items:center;gap:18px;justify-content:space-between;flex-wrap:wrap}
+.topbar a:hover{color:#fff}
+.top-contact{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.top-contact a{display:inline-flex;align-items:center;gap:7px}
+.top-shloka{font-family:'Tiro Devanagari Hindi';letter-spacing:.3px;opacity:.95}
+.top-right{display:flex;gap:10px;align-items:center}
+.live-dot{width:8px;height:8px;background:#2bff6a;border-radius:50%;box-shadow:0 0 10px #2bff6a;animation:blink 1.5s infinite}
+@keyframes blink{50%{opacity:.4}}
+/* Header */
+header{position:sticky;top:0;z-index:100;background:rgba(255,248,232,.92);backdrop-filter:blur(14px);border-bottom:2px solid rgba(201,162,39,.35);transition:.3s}
+header.scrolled{box-shadow:0 8px 30px rgba(0,0,0,.12)}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:16px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffcc5e,#ff8a00 45%,#5e0c0c 75%);display:grid;place-items:center;color:#fff;font-family:'Yatra One';font-size:32px;border:3px solid var(--gold);box-shadow:0 6px 18px rgba(255,138,0,.35);position:relative}
+.logo-mark::after{content:'';position:absolute;inset:-6px;border:1px dashed var(--gold);border-radius:50%;animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.logo-text h2{font-size:26px;line-height:1;color:var(--maroon);letter-spacing:.3px}
+.logo-text p{font-size:12.5px;color:var(--muted);letter-spacing:.6px;margin-top:2px}
+nav.main-nav{display:flex;gap:4px;align-items:center}
+nav.main-nav a{padding:9px 14px;border-radius:99px;font-weight:600;font-size:15.5px;color:#4a2a1a;transition:.25s;white-space:nowrap}
+nav.main-nav a:hover,nav.main-nav a.active{background:var(--maroon);color:#ffe9b5}
+.header-cta{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 22px;border-radius:99px;font-weight:700;font-size:15.5px;border:2px solid transparent;cursor:pointer;transition:.25s;line-height:1.2}
+.btn-saffron{background:linear-gradient(135deg,#ff8a00,#ff3d00);color:#fff;box-shadow:0 10px 25px rgba(255,90,0,.35)}
+.btn-saffron:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(255,90,0,.45)}
+.btn-outline{border-color:var(--maroon);color:var(--maroon);background:#fff}
+.btn-outline:hover{background:var(--maroon);color:#ffe9b5}
+.btn-maroon{background:var(--maroon);color:#ffe9b5}
+.btn-maroon:hover{background:#3d0808}
+.btn-whats{background:var(--wa);color:#fff}
+.hamburger{display:none;width:48px;height:48px;border-radius:12px;border:1.5px solid var(--gold);background:#fff;font-size:20px;color:var(--maroon);cursor:pointer}
+/* Hero */
+.hero{background:radial-gradient(900px 500px at 85% 15%,rgba(255,179,0,.22),transparent),radial-gradient(700px 500px at 10% 90%,rgba(255,90,0,.18),transparent),linear-gradient(180deg,#2b0606 0%,#5e0c0c 55%,#7a1a0e 100%);color:#fff8e8;overflow:hidden;padding:56px 0 0}
+.hero::before{content:'ॐ';position:absolute;font-family:'Yatra One';font-size:520px;opacity:.05;right:-40px;top:-40px;line-height:1;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:36px;align-items:center;padding-bottom:46px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,211,101,.14);border:1px solid rgba(245,214,123,.5);padding:7px 14px;border-radius:99px;font-size:14px;color:#ffe9b5}
+.badge i{color:var(--saffron2)}
+.hero h1{font-size:clamp(32px,5vw,58px);color:#fff;line-height:1.18;margin:16px 0 12px}
+.hero h1 span{background:linear-gradient(90deg,#ffd76a,#ff8a00);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{font-family:'Tiro Devanagari Hindi';font-size:18.5px;line-height:1.9;color:#ffeecb;background:rgba(0,0,0,.22);border-left:4px solid var(--gold);padding:16px 18px;border-radius:0 14px 14px 0;margin:18px 0}
+.hero-points{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}
+.hero-points div{display:flex;gap:10px;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:10px 12px;border-radius:12px;font-size:14.5px}
+.hero-points i{color:#ffcf4d}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.quick-contact{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.qc{background:#fffdf4;color:var(--ink);border-radius:14px;padding:10px 14px;display:flex;gap:10px;align-items:center;min-width:210px;border:1px solid rgba(201,162,39,.5)}
+.qc i{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--maroon);color:#ffe9b5}
+.qc small{display:block;color:var(--muted);font-size:12px;line-height:1}
+.qc strong{font-size:15px}
+/* Hero card */
+.hero-card{background:linear-gradient(180deg,#fffdf4,#fff1cf);border-radius:22px;padding:22px;color:var(--ink);box-shadow:var(--shadow);border:3px solid var(--gold);position:relative;overflow:hidden}
+.hero-card::after{content:'';position:absolute;inset:8px;border:1px dashed rgba(201,162,39,.6);border-radius:14px;pointer-events:none}
+.kundli-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.kundli-head h3{font-size:20px}
+.panchang-box{background:var(--maroon);color:#ffe9b5;border-radius:14px;padding:12px 14px;margin:14px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center}
+.panchang-box small{display:block;opacity:.7;font-size:12px}
+.panchang-box strong{font-size:14.5px}
+.chakra-wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center}
+.chakra{width:100%;aspect-ratio:1;background:radial-gradient(circle,#fff 60%,#ffe9b5);border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;position:relative;overflow:hidden}
+.chakra svg{width:92%;height:92%;animation:spinSlow 60s linear infinite}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+.chakra-center{position:absolute;width:78px;height:78px;background:var(--maroon);color:#ffd76a;border-radius:50%;display:grid;place-items:center;font-family:'Yatra One';font-size:36px;border:3px solid var(--gold);box-shadow:0 0 30px rgba(255,138,0,.5)}
+.diya-row{display:flex;gap:10px;justify-content:center;margin:10px 0}
+.diya{font-size:26px;position:relative;filter:drop-shadow(0 0 8px orange)}
+.diya::after{content:'';position:absolute;top:-8px;left:50%;width:8px;height:12px;background:radial-gradient(#fff,#ff8a00);border-radius:50%;transform:translateX(-50%);animation:flick .6s infinite alternate}
+@keyframes flick{from{transform:translateX(-50%) scale(1)}to{transform:translateX(-50%) scale(1.25) skewX(6deg)}}
+.muhurat-list{font-size:14px;background:#fff;border:1px solid #e8d5a3;border-radius:12px;padding:12px}
+.muhurat-list li{list-style:none;padding:6px 0;border-bottom:1px dashed #e8d5a3;display:flex;justify-content:space-between}
+.muhurat-list li:last-child{border:none}
+/* marquee */
+.marquee{background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-dark));color:#2b0606;font-weight:700;overflow:hidden;white-space:nowrap;padding:10px 0;border-y:1px solid #000}
+.marquee-track{display:inline-block;animation:marq 28s linear infinite}
+@keyframes marq{to{transform:translateX(-50%)}}
+.marquee span{margin:0 18px;font-size:15.5px}
+/* sections */
+.section{padding:72px 0}
+.section-head{text-align:center;max-width:760px;margin:0 auto 38px}
+.kicker{display:inline-block;background:#ffe9b5;border:1px solid var(--gold);color:var(--maroon2);padding:6px 16px;border-radius:99px;font-weight:700;font-size:14px;letter-spacing:.4px}
+.section-head h2{font-size:clamp(28px,4vw,44px);margin:12px 0 8px}
+.section-head p{color:#6b5a4a;font-size:17px}
+.divider-om{display:flex;align-items:center;gap:12px;justify-content:center;margin:10px 0 0;color:var(--gold-dark)}
+.divider-om::before,.divider-om::after{content:'';height:1px;width:90px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+/* stats */
+.stats{background:linear-gradient(180deg,#fffdf4,#fff1cf);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:28px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{text-align:center;padding:14px;background:#fff;border:1px solid #ead9a8;border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.stat h3{font-size:34px;color:var(--maroon)}
+.stat p{font-size:14.5px;color:var(--muted)}
+/* services */
+#services{background-image:radial-gradient(rgba(201,162,39,.12) 1.5px,transparent 1.5px);background-size:22px 22px}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:26px}
+.search-box{display:flex;align-items:center;gap:10px;background:#fff;border:2px solid #e8d5a3;border-radius:99px;padding:10px 18px;min-width:320px;max-width:100%}
+.search-box input{border:none;outline:none;font-family:inherit;font-size:16px;width:100%;background:transparent}
+.filter-pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.pill{padding:9px 18px;border-radius:99px;border:1.5px solid var(--gold);background:#fff;font-weight:700;font-size:14px;cursor:pointer;transition:.2s}
+.pill.active,.pill:hover{background:var(--maroon);color:#ffe9b5;border-color:var(--maroon)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.s-card{background:var(--paper);border-radius:var(--radius);border:1.5px solid #ead9a8;overflow:hidden;transition:.3s;position:relative;display:flex;flex-direction:column}
+.s-card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:var(--gold)}
+.s-top{height:8px;background:linear-gradient(90deg,var(--maroon),var(--saffron),var(--gold))}
+.s-body{padding:20px}
+.s-num{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:#fff1cf;border:1px solid var(--gold);display:grid;place-items:center;font-weight:800;color:var(--maroon)}
+.s-icon{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,var(--maroon),#a91e1e);color:#ffd76a;display:grid;place-items:center;font-size:26px;margin-bottom:12px;box-shadow:0 8px 18px rgba(94,12,12,.25)}
+.s-body h3{font-size:19px;margin-bottom:6px;line-height:1.4}
+.s-body p{font-size:14.5px;color:#6b5a4a;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.s-meta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;font-size:13px}
+.s-meta span{background:#fff1cf;border:1px solid #e8d5a3;padding:4px 10px;border-radius:99px}
+.s-foot{display:flex;gap:8px;padding:0 20px 20px;margin-top:auto}
+.s-foot button{flex:1;padding:10px;border-radius:12px;font-weight:700;font-family:inherit;font-size:14.5px;cursor:pointer;border:1.5px solid var(--maroon);transition:.2s}
+.btn-detail{background:#fff;color:var(--maroon)}
+.btn-detail:hover{background:#fff1cf}
+.btn-book{background:var(--maroon);color:#ffe9b5}
+.btn-book:hover{background:#3d0808}
+/* parampara */
+.parampara{background:linear-gradient(180deg,#2b0606,#5e0c0c);color:#ffe9b5;overflow:hidden}
+.parampara h2{color:#ffe9b5}
+.parampara .section-head p{color:#e8cfa0}
+.para-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.para-images{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.para-frame{background:#fffdf4;padding:10px;border-radius:16px;border:2px solid var(--gold);cursor:zoom-in;transition:.3s;position:relative}
+.para-frame:hover{transform:scale(1.02)}
+.para-frame img{border-radius:10px;height:420px;width:100%;object-fit:cover;object-position:top}
+.para-frame span{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);background:var(--maroon);color:#ffe9b5;padding:5px 14px;border-radius:99px;font-size:13px;white-space:nowrap}
+.para-content{background:rgba(255,255,255,.07);border:1px solid rgba(245,214,123,.35);border-radius:18px;padding:24px}
+.para-content h3{color:#ffd76a;font-size:22px;margin-bottom:10px}
+.para-content ol{margin:12px 0 12px 20px;font-size:15.5px;line-height:1.9}
+.transcript{background:#fffdf4;color:var(--ink);border-radius:12px;padding:16px;margin-top:12px;display:none;max-height:320px;overflow:auto;font-size:14.5px}
+.transcript.show{display:block}
+/* rashifal */
+.rashi-tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:22px}
+.rashi-tab{width:86px;padding:10px 6px;background:#fff;border:1.5px solid #e8d5a3;border-radius:14px;cursor:pointer;text-align:center;transition:.2s}
+.rashi-tab.active{background:var(--maroon);color:#ffe9b5;border-color:var(--maroon);transform:translateY(-3px);box-shadow:0 10px 20px rgba(94,12,12,.25)}
+.rashi-tab .sym{font-size:24px}
+.rashi-tab small{font-size:12.5px;font-weight:700}
+.rashi-card{background:#fff;border:2px solid var(--gold);border-radius:20px;padding:26px;display:grid;grid-template-columns:1.2fr .8fr;gap:22px;box-shadow:var(--shadow)}
+.bars{margin-top:14px;display:grid;gap:10px}
+.bar-row{font-size:14px}
+.bar-track{height:8px;background:#f3e6c3;border-radius:99px;overflow:hidden;margin-top:4px}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--saffron),var(--maroon));border-radius:99px;width:0;transition:width 1s}
+.lucky-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.lucky{background:#fff8e8;border:1px dashed var(--gold);border-radius:12px;padding:10px;text-align:center}
+/* kundli */
+.kundli-sec{background:linear-gradient(180deg,#fffdf4,#ffeecb)}
+.kundli-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:24px}
+.form-card,.result-card{background:#fff;border:2px solid var(--gold);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-weight:700;margin-bottom:6px;font-size:15px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;border:1.5px solid #e0c98f;border-radius:12px;font-family:inherit;font-size:15.5px;background:#fffdf4;outline:none;transition:.2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--maroon);box-shadow:0 0 0 3px rgba(94,12,12,.12)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.error{font-size:13px;color:#c00;margin-top:4px;display:none}
+.north-chart{width:100%;max-width:360px;margin:auto;background:#fffdf4;border:2px solid var(--maroon);border-radius:12px}
+.kundli-result-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.k-meta{background:#fff8e8;border:1px solid #e8d5a3;border-radius:12px;padding:10px}
+/* pricings */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.price-card{background:#fff;border-radius:20px;border:2px solid #ead9a8;padding:26px;text-align:center;position:relative;transition:.3s}
+.price-card.featured{border-color:var(--saffron);transform:scale(1.03);box-shadow:var(--shadow);background:linear-gradient(180deg,#fff,#fff1cf)}
+.price-card:hover{transform:translateY(-6px)}
+.price-tag{font-family:'Yatra One';font-size:36px;color:var(--maroon)}
+.price-tag small{font-size:15px;color:var(--muted)}
+.price-card ul{list-style:none;text-align:left;margin:16px 0;font-size:14.5px;display:grid;gap:8px}
+.price-card ul i{color:var(--green);margin-right:8px}
+/* testimonials */
+.testi-wrap{position:relative;max-width:820px;margin:auto}
+.testi-track{display:flex;transition:transform .5s;gap:0}
+.testi{ min-width:100%;background:#fff;border:2px solid var(--gold);border-radius:20px;padding:28px;text-align:center}
+.stars{color:#ff9a00;letter-spacing:2px}
+.testi-nav{display:flex;gap:10px;justify-content:center;margin-top:16px}
+.testi-nav button{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--gold);background:#fff;cursor:pointer;font-size:18px;color:var(--maroon)}
+.testi-dots{display:flex;gap:6px;justify-content:center;margin-top:12px}
+.testi-dots span{width:10px;height:10px;border-radius:50%;background:#e8d5a3;cursor:pointer}
+.testi-dots span.active{background:var(--maroon);width:28px;border-radius:99px}
+/* faq */
+.faq{max-width:820px;margin:auto;display:grid;gap:12px}
+.faq-item{background:#fff;border:1.5px solid #ead9a8;border-radius:14px;overflow:hidden}
+.faq-q{padding:16px 18px;font-weight:700;font-size:16.5px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:var(--maroon-dark)}
+.faq-q i{transition:.3s}
+.faq-item.open .faq-q i{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:.35s;padding:0 18px;color:#5a4a3d}
+.faq-item.open .faq-a{max-height:300px;padding:0 18px 16px}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px}
+.c-info{display:grid;gap:12px}
+.c-card{background:#fff;border:1.5px solid #ead9a8;border-radius:16px;padding:18px;display:flex;gap:14px;align-items:flex-start}
+.c-card i{width:48px;height:48px;border-radius:14px;background:var(--maroon);color:#ffd76a;display:grid;place-items:center;font-size:20px;flex-shrink:0}
+.c-card a{font-weight:700;color:var(--maroon);font-size:17px}
+.c-card a:hover{text-decoration:underline}
+/* footer */
+footer{background:#1c0404;color:#e8cfa0;padding:50px 0 0;margin-top:40px}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:24px;padding-bottom:30px}
+.foot-grid h4{color:#ffd76a;margin-bottom:12px;font-family:'Yatra One'}
+.foot-grid a{display:block;padding:5px 0;font-size:14.5px;opacity:.9}
+.foot-grid a:hover{color:#fff;padding-left:4px}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding:16px 0;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13.5px}
+/* floating */
+.floats{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:10px;z-index:200}
+.float-btn{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:24px;color:#fff;box-shadow:0 10px 25px rgba(0,0,0,.3);transition:.25s;border:2px solid #fff}
+.float-btn:hover{transform:scale(1.08)}
+.float-wa{background:#25D366} .float-call{background:linear-gradient(135deg,#ff8a00,#c00)} .float-top{background:var(--maroon);font-size:18px;width:46px;height:46px;margin:auto;display:none}
+/* modal lightbox toast */
+.modal-overlay,.lightbox{position:fixed;inset:0;background:rgba(20,5,5,.75);backdrop-filter:blur(6px);z-index:500;display:none;align-items:center;justify-content:center;padding:18px}
+.modal-overlay.show,.lightbox.show{display:flex}
+.modal{background:#fffdf4;border-radius:20px;max-width:560px;width:100%;max-height:90vh;overflow:auto;border:3px solid var(--gold);animation:pop .35s}
+@keyframes pop{from{transform:scale(.9) translateY(20px);opacity:0}}
+.modal-head{background:linear-gradient(90deg,var(--maroon),#a91e1e);color:#ffe9b5;padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
+.modal-head button{background:rgba(255,255,255,.2);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px}
+.modal-body{padding:20px}
+.lightbox img{max-height:86vh;max-width:92vw;border-radius:12px;border:4px solid var(--gold)}
+#toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:#1c0404;color:#ffe9b5;padding:13px 22px;border-radius:99px;border:1px solid var(--gold);z-index:600;opacity:0;pointer-events:none;transition:.35s;font-weight:600;max-width:92vw;text-align:center}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.om-float{position:absolute;font-family:'Yatra One';color:rgba(255,215,106,.18);pointer-events:none;animation:floatUp linear infinite}
+@keyframes floatUp{from{transform:translateY(100px);opacity:0}20%{opacity:1}to{transform:translateY(-500px);opacity:0}}
+@media(max-width:1020px){
+  .hero-grid,.kundli-grid,.contact-grid,.para-grid,.rashi-card{grid-template-columns:1fr}
+  .services-grid,.pricing-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  nav.main-nav{position:fixed;top:0;right:-100%;width:82%;max-width:340px;height:100vh;background:#fffdf4;flex-direction:column;align-items:stretch;padding:80px 20px 20px;transition:.35s;box-shadow:-20px 0 50px rgba(0,0,0,.2);z-index:150}
+  nav.main-nav.open{right:0}
+  .hamburger{display:block}
+  .header-cta .btn-outline{display:none}
+  .para-images{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .services-grid,.pricing-grid{grid-template-columns:1fr}
+  .hero-points{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .para-images{grid-template-columns:1fr}
+  .para-frame img{height:520px}
+  .panchang-box{grid-template-columns:1fr 1fr}
+  .top-shloka{display:none}
+  .search-box{min-width:100%}
+}
+.mobile-close{display:none}
+@media(max-width:1020px){.mobile-close{display:block;position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:50%;border:1px solid var(--gold);background:#fff}}
+</style>
+</head>
+<body>
+<div id="preloader"><div class="om-loader">ॐ</div><div style="font-family:'Yatra One';font-size:20px;margin-top:6px">आचार्य तरुण संस्थान</div><div class="load-bar"><span></span></div><div style="font-size:13px;margin-top:10px;opacity:.7">मंत्र • ज्योतिष • यज्ञ</div></div>
+
+<div class="topbar">
+  <div class="container">
+    <div class="top-contact">
+      <span class="top-shloka">॥ ॐ श्री गणेशाय नमः ॥ शुभं भूयात्</span>
+      <a href="mailto:Aacharyatarun0@gmail.com"><i class="fa-solid fa-envelope"></i> Aacharyatarun0@gmail.com</a>
+      <a href="tel:+918091225439"><i class="fa-solid fa-phone"></i> 80912 25439</a>
+      <a href="tel:+918350973006"><i class="fa-solid fa-phone"></i> 83509 73006</a>
+    </div>
+    <div class="top-right"><span class="live-dot"></span><span id="topDate">—</span></div>
+  </div>
+</div>
+
+<header id="header">
+  <div class="container nav-wrap">
+    <a href="#home" class="logo"><div class="logo-mark">ॐ</div><div class="logo-text"><h2>आचार्य तरुण</h2><p>ज्योतिष • मंत्र चिकित्सा • यज्ञ संस्थान</p></div></a>
+    <nav class="main-nav" id="mainNav">
+      <button class="mobile-close" onclick="toggleNav(false)"><i class="fa-solid fa-xmark"></i></button>
+      <a href="#home" class="active">मुख्य पृष्ठ</a>
+      <a href="#services">सेवाएं</a>
+      <a href="#parampara">परंपरा</a>
+      <a href="#rashifal">राशिफल</a>
+      <a href="#kundli">कुंडली</a>
+      <a href="#dakshina">दक्षिणा</a>
+      <a href="#sampark">संपर्क</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-outline" href="tel:+918091225439"><i class="fa-solid fa-phone"></i> कॉल करें</a>
+      <a class="btn btn-saffron" href="#booking" onclick="openBooking('ज्योतिष परामर्श')"><i class="fa-solid fa-calendar-check"></i> परामर्श बुक करें</a>
+      <button class="hamburger" onclick="toggleNav()"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge"><i class="fa-solid fa-award"></i> 20+ वर्षों का अनुभव • मंत्र सिद्ध परंपरा • 50,000+ संतुष्ट यजमान</div>
+      <h1>जीवन की हर बाधा का <span>अचूक समाधान</span> मंत्र • ज्योतिष • यज्ञ द्वारा</h1>
+      <div class="hero-sub">हमारे संस्थान में जुड़ने के लिए आपका धन्यवाद। हमारे यहाँ आपको सभी प्रकार के उपायों के दिशा-निर्देश दिए और बताए जाते हैं। मंत्र योग द्वारा सभी प्रकार की समस्याओं से निदान करवाया जाता है। ज्योतिष परामर्श द्वारा जीवन में आ रही समस्याओं के लिए अचूक उपाय करवाए जाते हैं।</div>
+      <div class="hero-points">
+        <div><i class="fa-solid fa-circle-check"></i> कुंडली • हस्तरेखा • वास्तु विशेषज्ञ</div>
+        <div><i class="fa-solid fa-circle-check"></i> ऑनलाइन / ऑफलाइन परामर्श उपलब्ध</div>
+        <div><i class="fa-solid fa-circle-check"></i> पितृ दोष, ग्रह बाधा, विवाह बाधा निवारण</div>
+        <div><i class="fa-solid fa-circle-check"></i> गुप्त मंत्र चिकित्सा व पुरश्चरण</div>
+      </div>
+      <div class="hero-btns">
+        <a href="#booking" class="btn btn-saffron" onclick="openBooking('ज्योतिष परामर्श')"><i class="fa-solid fa-om"></i> अभी परामर्श लें</a>
+        <a href="https://wa.me/918091225439?text=नमस्ते%20आचार्य%20जी,%20मुझे%20परामर्श%20चाहिए" target="_blank" class="btn btn-whats"><i class="fa-brands fa-whatsapp"></i> WhatsApp करें</a>
+        <a href="#services" class="btn" style="background:#fff;color:var(--maroon)"><i class="fa-solid fa-list"></i> सभी सेवाएं</a>
+      </div>
+      <div class="quick-contact">
+        <a class="qc" href="tel:+918091225439"><i class="fa-solid fa-phone-volume"></i><span><small>तुरंत कॉल करें</small><strong>80912 25439</strong></span></a>
+        <a class="qc" href="tel:+918350973006"><i class="fa-solid fa-mobile-screen"></i><span><small>दूसरा संपर्क</small><strong>83509 73006</strong></span></a>
+        <a class="qc" href="mailto:Aacharyatarun0@gmail.com"><i class="fa-solid fa-envelope-open-text"></i><span><small>ईमेल करें</small><strong style="font-size:12.5px">Aacharyatarun0@gmail.com</strong></span></a>
+      </div>
+    </div>
+    <div class="hero-card" id="heroCard">
+      <div class="kundli-head"><h3>🪔 आज का पंचांग व शुभ मुहूर्त</h3><span class="pill active" id="hindiDate2" style="font-size:12px">—</span></div>
+      <div class="panchang-box">
+        <div><small>वार</small><strong id="pVar">मंगलवार</strong></div>
+        <div><small>तिथि</small><strong id="pTithi">शुक्ल पक्ष द्वादशी</strong></div>
+        <div><small>नक्षत्र</small><strong id="pNak">श्रवण</strong></div>
+        <div><small>योग</small><strong>सौभाग्य</strong></div>
+        <div><small>राहुकाल</small><strong>15:00 - 16:30</strong></div>
+        <div><small>शुभ मुहूर्त</small><strong style="color:#7CFF9B">10:30 - 12:00</strong></div>
+      </div>
+      <div class="chakra-wrap">
+        <div class="chakra">
+          <svg viewBox="0 0 200 200"><g fill="none" stroke="#8a6d1b" stroke-width="1.2"><circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="72"/><circle cx="100" cy="100" r="52"/><g font-size="13" text-anchor="middle" fill="#5e0c0c" stroke="none" font-family="serif"><text x="100" y="18">मे</text><text x="148" y="32">वृ</text><text x="179" y="68">मि</text><text x="185" y="115">क</text><text x="160" y="160">सिं</text><text x="115" y="185">क</text><text x="68" y="181">तु</text><text x="30" y="150">वृ</text><text x="15" y="105">ध</text><text x="32" y="60">म</text><text x="66" y="28">कुं</text><text x="100" y="100" font-size="0">.</text></g><g stroke="#c9a227"><line x1="100" y1="4" x2="100" y2="28"/><line x1="100" y1="172" x2="100" y2="196"/></g></g></svg>
+          <div class="chakra-center">ॐ</div>
+        </div>
+        <div>
+          <div class="diya-row"><span class="diya">🪔</span><span class="diya">🪔</span><span class="diya">🪔</span></div>
+          <ul class="muhurat-list">
+            <li><span>🔮 ज्योतिष परामर्श</span><strong>प्रतिदिन 8AM-9PM</strong></li>
+            <li><span>📿 मंत्र चिकित्सा</span><strong>अपॉइंटमेंट पर</strong></li>
+            <li><span>🔥 हवन / अनुष्ठान</span><strong>शुभ मुहूर्त में</strong></li>
+            <li><span>💻 ऑनलाइन पूजा</span><strong>Video Call पर</strong></li>
+          </ul>
+          <button class="btn btn-maroon" style="width:100%;justify-content:center;margin-top:12px" onclick="playBell()"><i class="fa-solid fa-bell"></i> <span id="bellLabel">मंदिर घंटी बजाएं</span></button>
+        </div>
+      </div>
+      <div style="margin-top:12px;background:#fff;border:1px solid #e8d5a3;border-radius:12px;padding:10px 14px;font-size:14px;display:flex;gap:10px;align-items:center"><i class="fa-solid fa-scroll" style="color:var(--maroon)"></i> नीचे हमारी <b>&nbsp;मूल हस्तलिखित पोथी&nbsp;</b> के दर्शन अवश्य करें <a href="#parampara" style="margin-left:auto;color:var(--maroon);font-weight:800">देखें →</a></div>
+    </div>
+  </div>
+  <div class="marquee"><div class="marquee-track" id="marqueeTrack"></div></div>
+</section>
+
+<div class="stats"><div class="container stats-grid">
+  <div class="stat"><h3><span class="counter" data-target="21">0</span>+</h3><p>वर्षों का आध्यात्मिक अनुभव</p></div>
+  <div class="stat"><h3><span class="counter" data-target="50000">0</span>+</h3><p>संतुष्ट यजमान व परिवार</p></div>
+  <div class="stat"><h3><span class="counter" data-target="11000">0</span>+</h3><p>सफल हवन व अनुष्ठान</p></div>
+  <div class="stat"><h3><span class="counter" data-target="14">0</span></h3><p>विशेषज्ञ सेवाएं एक ही स्थान पर</p></div>
+</div></div>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head"><span class="kicker">॥ हमारी सेवाएं ॥</span><h2>सभी प्रकार की समस्याओं का निदान</h2><p>मंत्र योग, ज्योतिष गणना और वैदिक विधि-विधान द्वारा जीवन की हर बाधा का शास्त्रोक्त समाधान</p><div class="divider-om">ॐ</div></div>
+    <div class="toolbar">
+      <div class="search-box"><i class="fa-solid fa-magnifying-glass" style="color:var(--maroon)"></i><input id="serviceSearch" placeholder="सेवा खोजें... जैसे: विवाह, वास्तु, हवन, पुत्र..."></div>
+    </div>
+    <div class="filter-pills" id="filterPills">
+      <button class="pill active" data-f="all">सभी</button>
+      <button class="pill" data-f="jyotish">ज्योतिष</button>
+      <button class="pill" data-f="badha">बाधा निवारण</button>
+      <button class="pill" data-f="yagya">यज्ञ-हवन</button>
+      <button class="pill" data-f="vastu">वास्तु</button>
+    </div>
+    <div class="services-grid" id="servicesGrid" style="margin-top:20px"></div>
+  </div>
+</section>
+
+<section class="section parampara" id="parampara">
+  <div class="container">
+    <div class="section-head"><span class="kicker" style="background:rgba(255,255,255,.12);color:#ffd76a;border-color:#ffd76a">॥ मूल हस्तलेख ॥</span><h2>हमारी परंपरा - हस्तलिखित संकल्प पोथी</h2><p>आचार्य जी की स्वयं की हस्तलिखित पोथी से - यही सेवाएं पीढ़ियों से चली आ रही सिद्ध परंपरा का प्रमाण हैं</p></div>
+    <div class="para-grid">
+      <div class="para-images">
+        <div class="para-frame" onclick="openLightbox(this.querySelector('img').src)"><img src="https://dvxrhkgloakisnvqoxgl.supabase.co/storage/v1/object/sign/images/inputs/1788850465996_6iaqpo4w6.jpg?token=eyJraWQiOiI0NWE1YWU1ZS0xNzg4LTRiMWYtYWM5OC1hMjgwNmQ2OTM4ZWMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvaW5wdXRzLzE3ODg4NTA0NjU5OTZfNmlhcXBvNHc2LmpwZyIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODg4NTA1NjksImV4cCI6MTgyMDM4NjU2OX0.prIOuVqIGDSvJr_IFlM04I5NADI80ErmUqrf2THEKBQ" alt="हस्तलिखित सेवा सूची पृष्ठ 1"><span><i class="fa-solid fa-expand"></i> पृष्ठ 1 - बड़ा करें</span></div>
+        <div class="para-frame" onclick="openLightbox(this.querySelector('img').src)"><img src="https://dvxrhkgloakisnvqoxgl.supabase.co/storage/v1/object/sign/images/inputs/1788850472001_r6d00cwl0.jpg?token=eyJraWQiOiI0NWE1YWU1ZS0xNzg4LTRiMWYtYWM5OC1hMjgwNmQ2OTM4ZWMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvaW5wdXRzLzE3ODg4NTA0NzIwMDFfcjZkMDBjd2wwLmpwZyIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODg4NTA1NjksImV4cCI6MTgyMDM4NjU2OX0.0jxDhUMK8QRF8wm5gbtitrCos-n4V5b2UUJ_SkZp6Vk" alt="हस्तलिखित सेवा सूची पृष्ठ 2"><span><i class="fa-solid fa-expand"></i> पृष्ठ 2 - बड़ा करें</span></div>
+      </div>
+      <div class="para-content">
+        <h3>📜 पोथी में वर्णित सिद्ध कार्य</h3>
+        <p style="font-size:15px;opacity:.9">यह कोई छपी हुई सूची नहीं, आचार्य जी के हाथ से लिखी संकल्प-पोथी है। इसमें 6 से 14 तक क्रमांकित सिद्ध अनुष्ठान दर्ज हैं।</p>
+        <ol>
+          <li><b>पितृ यज्ञ, हवन, पिंडदान, नारायण बलि</b> - सभी कृत्य सिद्ध करके करवाए जाते हैं</li>
+          <li><b>संतान बाधा निवारण</b> - गर्भ बंधन खोलकर निश्चित पुत्र/पुत्री लाभ हेतु मंत्र चिकित्सा</li>
+          <li><b>गायत्री-महामृत्युंजय पुरश्चरण,</b> ग्रह जप-हवन, नकारात्मक ऊर्जा निवारण</li>
+          <li><b>वास्तु-गृह निर्माण,</b> ऑनलाइन ज्योतिष, पूजा-हवन</li>
+          <li><b>श्रीमद्भगवद्गीता, भागवत, देवी पुराण</b> सहित अठारह पुराण यज्ञ</li>
+        </ol>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-saffron" onclick="document.getElementById('transcript').classList.toggle('show')"><i class="fa-solid fa-book-open"></i> हस्तलेख का पाठ पढ़ें</button>
+          <a class="btn" style="background:#fff;color:var(--maroon)" href="https://wa.me/918091225439?text=मुझे%20पोथी%20में%20वर्णित%20अनुष्ठान%20की%20जानकारी%20चाहिए" target="_blank"><i class="fa-brands fa-whatsapp"></i> जानकारी लें</a>
+        </div>
+        <div class="transcript" id="transcript">
+          <b>पोथी पाठ (6-14):</b><br>
+          ⑥ पितृ यज्ञ, हवन, पिंडदान, नारायण बलि आदि सभी प्रकार के कृत्य उपलब्ध करवाए और सिद्ध किए जाते हैं।<br>
+          ⑦ सभी प्रकार के कृत्य उपलब्ध करवाए जाते हैं तथा सिद्ध किए जाते हैं।<br>
+          ⑧ पुत्र प्राप्ति में बाधा, गर्भ बंधन व निश्चित रूप से पुत्र/पुत्री लाभ मंत्र चिकित्सा द्वारा किया जाता है।<br>
+          ⑨ गायत्री पुरश्चरण, महामृत्युंजय पुरश्चरण।<br>
+          ⑩ ग्रह जप, हवन इत्यादि। ⑪ नकारात्मक ऊर्जा को हटाया जाता है।<br>
+          ⑫ वास्तु, नवीन गृह निर्माण व इसकी संपूर्ण जानकारी।<br>
+          ⑬ ऑनलाइन ज्योतिष परामर्श, पूजा, हवन इत्यादि।<br>
+          ⑭ श्रीमद्भगवद्गीता, श्रीमद्भागवत, देवी पुराण इत्यादि अठारह पुराण यज्ञ के लिए हमसे अवश्य जुड़ें।
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rashifal">
+  <div class="container">
+    <div class="section-head"><span class="kicker">॥ दैनिक राशिफल ॥</span><h2>आज का राशिफल - <span id="rashifalDate" style="color:var(--maroon2)"></span></h2><p>अपनी राशि चुनें और जानें आज का शुभ-अशुभ, उपाय व शुभ अंक</p></div>
+    <div class="rashi-tabs" id="rashiTabs"></div>
+    <div class="rashi-card">
+      <div>
+        <div style="display:flex;align-items:center;gap:14px"><div id="rashiIcon" style="width:64px;height:64px;border-radius:18px;background:var(--maroon);color:#ffd76a;display:grid;place-items:center;font-size:32px">♈</div><div><h3 id="rashiName" style="font-size:24px">मेष</h3><p id="rashiRange" style="color:var(--muted);font-size:14px">21 मार्च - 19 अप्रैल</p></div><span id="rashiStars" class="stars" style="margin-left:auto"></span></div>
+        <p id="rashiText" class="serif" style="margin-top:14px;font-size:17px;line-height:1.9"></p>
+        <div class="bars">
+          <div class="bar-row"><div style="display:flex;justify-content:space-between"><span>💼 कार्य-व्यापार</span><b id="vCareer">0%</b></div><div class="bar-track"><div class="bar-fill" id="bCareer"></div></div></div>
+          <div class="bar-row"><div style="display:flex;justify-content:space-between"><span>❤️ प्रेम-परिवार</span><b id="vLove">0%</b></div><div class="bar-track"><div class="bar-fill" id="bLove"></div></div></div>
+          <div class="bar-row"><div style="display:flex;justify-content:space-between"><span>🩺 स्वास्थ्य</span><b id="vHealth">0%</b></div><div class="bar-track"><div class="bar-fill" id="bHealth"></div></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="lucky-grid">
+          <div class="lucky"><small>शुभ रंग</small><br><b id="rColor">लाल</b><div id="rColorBox" style="height:22px;border-radius:8px;margin-top:6px;background:red"></div></div>
+          <div class="lucky"><small>शुभ अंक</small><br><b id="rNum" style="font-size:28px;color:var(--maroon)">9</b></div>
+          <div class="lucky" style="grid-column:1/-1;text-align:left"><small>✨ आज का उपाय</small><br><b id="rUpay" style="font-size:14.5px"></b></div>
+          <div class="lucky" style="grid-column:1/-1;text-align:left"><small>📿 जप मंत्र</small><br><b id="rMantra" class="serif" style="font-size:15px;color:var(--maroon)">ॐ हं हनुमते नमः - 11 बार</b></div>
+        </div>
+        <button class="btn btn-saffron" style="width:100%;justify-content:center;margin-top:14px" onclick="openBooking('राशिफल परामर्श')"><i class="fa-solid fa-phone"></i> विस्तृत परामर्श लें</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section kundli-sec" id="kundli">
+  <div class="container">
+    <div class="section-head"><span class="kicker">॥ निःशुल्क कुंडली झलक ॥</span><h2>जन्म विवरण से पाएं कुंडली संकेत</h2><p>विवरण भरें - तुरंत लग्न, राशि, नक्षत्र व महादशा संकेत + उत्तर भारतीय कुंडली चार्ट प्राप्त करें</p></div>
+    <div class="kundli-grid">
+      <div class="form-card">
+        <h3 style="margin-bottom:14px"><i class="fa-solid fa-star-and-crescent" style="color:var(--gold-dark)"></i> जन्म विवरण भरें</h3>
+        <div class="form-group"><label>पूरा नाम *</label><input id="kName" placeholder="जैसे: राहुल शर्मा"><div class="error" id="eName">कृपया नाम लिखें</div></div>
+        <div class="form-row">
+          <div class="form-group"><label>जन्म तिथि *</label><input type="date" id="kDob"><div class="error" id="eDob">तिथि चुनें</div></div>
+          <div class="form-group"><label>जन्म समय</label><input type="time" id="kTime" value="06:00"></div>
+        </div>
+        <div class="form-group"><label>जन्म स्थान</label><input id="kPlace" placeholder="जैसे: शिमला, हिमाचल"></div>
+        <div class="form-group"><label>लिंग</label><select id="kGender"><option>पुरुष</option><option>महिला</option><option>बालक / बालिका</option></select></div>
+        <button class="btn btn-maroon" style="width:100%;justify-content:center" onclick="generateKundli()"><i class="fa-solid fa-wand-magic-sparkles"></i> कुंडली बनाएं</button>
+        <p style="font-size:13px;color:var(--muted);margin-top:10px;text-align:center">* यह स्वचालित संकेत है। सटीक गणना हेतु आचार्य जी से परामर्श करें।</p>
+      </div>
+      <div class="result-card" id="kundliResult" style="display:none">
+        <h3>🔯 <span id="krName">—</span> की कुंडली झलक</h3>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:16px;margin-top:14px;align-items:center">
+          <svg class="north-chart" viewBox="0 0 300 300" id="northChart"></svg>
+          <div>
+            <div class="kundli-result-meta">
+              <div class="k-meta"><small>लग्न</small><br><b id="krLagna">—</b></div>
+              <div class="k-meta"><small>राशि</small><br><b id="krRashi">—</b></div>
+              <div class="k-meta"><small>नक्षत्र</small><br><b id="krNak">—</b></div>
+              <div class="k-meta"><small>महादशा</small><br><b id="krDasha">—</b></div>
+            </div>
+            <p id="krPred" class="serif" style="margin-top:12px;font-size:15.5px;background:#fff8e8;border:1px dashed var(--gold);border-radius:12px;padding:12px"></p>
+            <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+              <button class="btn btn-saffron" onclick="openBooking('कुंडली निर्माण')"><i class="fa-solid fa-file-signature"></i> पूर्ण कुंडली बनवाएं</button>
+              <button class="btn btn-outline" onclick="shareKundli()"><i class="fa-brands fa-whatsapp"></i> शेयर करें</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="result-card" id="kundliPlaceholder" style="display:grid;place-items:center;text-align:center;color:var(--muted)">
+        <div><div style="font-size:64px">🪐</div><h3>यहाँ आपकी कुंडली बनेगी</h3><p>बाईं ओर विवरण भरकर "कुंडली बनाएं" दबाएं<br>उत्तर भारतीय हीरक चार्ट सहित फलादेश मिलेगा</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="vidhi" style="padding-top:20px">
+  <div class="container">
+    <div class="section-head"><span class="kicker">॥ कार्य विधि ॥</span><h2>कैसे होता है समाधान? 4 सरल चरण</h2></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px" id="stepsGrid">
+      <div class="s-card"><div class="s-top"></div><div class="s-body" style="text-align:center"><div class="s-icon" style="margin:auto">📞</div><h3>1. संपर्क करें</h3><p>कॉल / WhatsApp / फॉर्म से समस्या बताएं। गोपनीयता पूर्ण।</p></div></div>
+      <div class="s-card"><div class="s-top"></div><div class="s-body" style="text-align:center"><div class="s-icon" style="margin:auto">🔍</div><h3>2. गणना व निदान</h3><p>कुंडली, हस्तरेखा व प्रश्न से मूल बाधा की पहचान।</p></div></div>
+      <div class="s-card"><div class="s-top"></div><div class="s-body" style="text-align:center"><div class="s-icon" style="margin:auto">📿</div><h3>3. उपाय व अनुष्ठान</h3><p>मंत्र, जप, हवन या यंत्र - शास्त्रोक्त विधि से संकल्प।</p></div></div>
+      <div class="s-card"><div class="s-top"></div><div class="s-body" style="text-align:center"><div class="s-icon" style="margin:auto">🌟</div><h3>4. लाभ व रक्षा</h3><p>नियमित मार्गदर्शन, कवच व सकारात्मक परिवर्तन।</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="dakshina" style="background:#fffdf4;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold)">
+  <div class="container">
+    <div class="section-head"><span class="kicker">॥ सेवा दक्षिणा ॥</span><h2>पारदर्शी दक्षिणा - कोई छिपा शुल्क नहीं</h2><p>परामर्श के बाद ही अनुष्ठान तय होगा। फोन पर निःशुल्क मार्गदर्शन (5 मिनट)</p></div>
+    <div class="pricing-grid">
+      <div class="price-card"><h4 style="color:var(--maroon)">ज्योतिष परामर्श</h4><div class="price-tag">₹510 <small>/ 30 मिनट</small></div><ul><li><i class="fa-solid fa-check"></i> कुंडली / हस्तरेखा विश्लेषण</li><li><i class="fa-solid fa-check"></i> 3 प्रश्नों का विस्तृत उत्तर</li><li><i class="fa-solid fa-check"></i> सरल घरेलू उपाय</li><li><i class="fa-solid fa-check"></i> फोन / Video Call</li></ul><button class="btn btn-outline" style="width:100%;justify-content:center" onclick="openBooking('ज्योतिष परामर्श - ₹510')">बुक करें</button></div>
+      <div class="price-card featured"><div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#ff8a00,#c00);color:#fff;padding:4px 16px;border-radius:99px;font-size:13px;font-weight:800">सबसे लोकप्रिय</div><h4 style="color:var(--maroon)">ग्रह शांति हवन + जप</h4><div class="price-tag">₹5100 <small>/ से शुरू</small></div><ul><li><i class="fa-solid fa-check"></i> नवग्रह / महामृत्युंजय जप</li><li><i class="fa-solid fa-check"></i> हवन + Online संकल्प</li><li><i class="fa-solid fa-check"></i> रक्षा कवच व यंत्र सहित</li><li><i class="fa-solid fa-check"></i> Video / फोटो प्रमाण</li></ul><button class="btn btn-saffron" style="width:100%;justify-content:center" onclick="openBooking('ग्रह शांति हवन')">बुक करें</button></div>
+      <div class="price-card"><h4 style="color:var(--maroon)">विशेष अनुष्ठान</h4><div class="price-tag">₹11000 <small>/ से शुरू</small></div><ul><li><i class="fa-solid fa-check"></i> पितृ शांति / नारायण बलि</li><li><i class="fa-solid fa-check"></i> संतान गोपाल / पुत्रेष्टि जप</li><li><i class="fa-solid fa-check"></i> गायत्री पुरश्चरण</li><li><i class="fa-solid fa-check"></i> भागवत / पुराण यज्ञ</li></ul><button class="btn btn-outline" style="width:100%;justify-content:center" onclick="openBooking('विशेष अनुष्ठान')">संपर्क करें</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="testi">
+  <div class="container">
+    <div class="section-head"><span class="kicker">॥ यजमान वाणी ॥</span><h2>हजारों परिवारों का विश्वास</h2></div>
+    <div class="testi-wrap">
+      <div style="overflow:hidden;border-radius:20px"><div class="testi-track" id="testiTrack"></div></div>
+      <div class="testi-nav"><button onclick="moveTesti(-1)"><i class="fa-solid fa-arrow-left"></i></button><button onclick="moveTesti(1)"><i class="fa-solid fa-arrow-right"></i></button></div>
+      <div class="testi-dots" id="testiDots"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" style="padding-top:0">
+  <div class="container">
+    <div class="section-head"><span class="kicker">॥ जिज्ञासा समाधान ॥</span><h2>अक्सर पूछे जाने वाले प्रश्न</h2></div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<section class="section" id="sampark" style="background:linear-gradient(180deg,#2b0606,#5e0c0c);color:#ffe9b5">
+  <div class="container">
+    <div class="section-head"><span class="kicker" style="background:rgba(255,255,255,.12);color:#ffd76a;border-color:#ffd76a">॥ संपर्क व बुकिंग ॥</span><h2 style="color:#fff">आज ही अपना परामर्श निश्चित करें</h2><p style="color:#e8cfa0">फॉर्म भरें - हम 2 घंटे के भीतर कॉल करेंगे। या सीधे कॉल / WhatsApp करें</p></div>
+    <div class="contact-grid">
+      <div class="c-info">
+        <div class="c-card"><i class="fa-solid fa-phone-volume"></i><div><small>मोबाइल (कॉल / WhatsApp)</small><br><a href="tel:+918091225439">80912 25439</a> • <a href="tel:+918350973006">83509 73006</a><br><div style="display:flex;gap:8px;margin-top:8px"><a href="https://wa.me/918091225439" target="_blank" class="btn btn-whats" style="padding:8px 16px;font-size:14px"><i class="fa-brands fa-whatsapp"></i> चैट करें</a><a href="tel:+918091225439" class="btn btn-maroon" style="padding:8px 16px;font-size:14px"><i class="fa-solid fa-phone"></i> कॉल करें</a></div></div></div>
+        <div class="c-card"><i class="fa-solid fa-envelope"></i><div><small>ईमेल</small><br><a href="mailto:Aacharyatarun0@gmail.com" style="font-size:15px">Aacharyatarun0@gmail.com</a><p style="font-size:13.5px;color:var(--muted)">कुंडली विवरण व फोटो यहाँ भेजें</p></div></div>
+        <div class="c-card"><i class="fa-solid fa-clock"></i><div><small>समय</small><br><b>प्रातः 8:00 - रात्रि 9:00 (सप्ताह के 7 दिन)</b><p style="font-size:13.5px;color:var(--muted)">हवन हेतु शुभ मुहूर्त पूर्व बुकिंग आवश्यक</p></div></div>
+        <div class="c-card"><i class="fa-solid fa-location-dot"></i><div><small>स्थान</small><br><b>हिमाचल प्रदेश, भारत</b><p style="font-size:13.5px;color:var(--muted)">ऑनलाइन सेवा - पूरे भारत व विदेश में उपलब्ध</p></div></div>
+      </div>
+      <div class="form-card" id="booking" style="border-color:var(--gold-light)">
+        <h3 style="color:var(--maroon)">📅 परामर्श बुकिंग फॉर्म</h3>
+        <p style="font-size:14px;color:var(--muted)">सभी फ़ील्ड भरें, तुरंत WhatsApp कन्फर्मेशन पाएं</p>
+        <div style="height:12px"></div>
+        <div class="form-row">
+          <div class="form-group"><label>आपका नाम *</label><input id="bName" placeholder="पूरा नाम"><div class="error" id="beName">नाम आवश्यक है</div></div>
+          <div class="form-group"><label>मोबाइल नंबर *</label><input id="bPhone" maxlength="10" inputmode="numeric" placeholder="10 अंकों का नंबर"><div class="error" id="bePhone">सही 10 अंकों का नंबर लिखें</div></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>सेवा चुनें *</label><select id="bService"></select></div>
+          <div class="form-group"><label>माध्यम</label><select id="bMode"><option>फोन पर</option><option>WhatsApp Video Call</option><option>सामने मिलकर</option><option>ऑनलाइन पूजा / हवन</option></select></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>पसंदीदा तिथि</label><input type="date" id="bDate"></div>
+          <div class="form-group"><label>समय</label><select id="bTime"><option>सुबह 8-11</option><option>दोपहर 11-2</option><option>शाम 4-7</option><option>रात 7-9</option></select></div>
+        </div>
+        <div class="form-group"><label>समस्या संक्षेप में लिखें</label><textarea id="bMsg" rows="3" placeholder="जैसे: विवाह में देरी, नौकरी बाधा, घर में नकारात्मकता..."></textarea></div>
+        <button class="btn btn-saffron" style="width:100%;justify-content:center;font-size:17px" onclick="submitBooking()"><i class="fa-solid fa-paper-plane"></i> बुकिंग पक्की करें</button>
+        <div id="bookingSuccess" style="display:none;margin-top:12px;background:#e8ffef;border:1.5px solid #25a44a;border-radius:12px;padding:12px;font-size:14.5px;color:#0d5a24"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot-grid">
+    <div><div class="logo" style="margin-bottom:10px"><div class="logo-mark" style="width:48px;height:48px;font-size:26px">ॐ</div><div class="logo-text"><h2 style="color:#ffd76a;font-size:22px">आचार्य तरुण</h2><p style="color:#c9a88a">मंत्र • ज्योतिष • यज्ञ</p></div></div><p style="font-size:14px">मंत्र योग द्वारा सभी प्रकार की समस्याओं से निदान। ज्योतिष परामर्श द्वारा अचूक उपाय। शास्त्रोक्त, सात्विक व गोपनीय सेवा।</p><div style="display:flex;gap:8px;margin-top:12px"><a href="https://wa.me/918091225439" target="_blank" style="width:40px;height:40px;border-radius:50%;background:#25D366;display:grid;place-items:center;color:#fff"><i class="fa-brands fa-whatsapp"></i></a><a href="tel:+918091225439" style="width:40px;height:40px;border-radius:50%;background:#ff8a00;display:grid;place-items:center;color:#fff"><i class="fa-solid fa-phone"></i></a><a href="mailto:Aacharyatarun0@gmail.com" style="width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--maroon)"><i class="fa-solid fa-envelope"></i></a></div></div>
+    <div><h4>मुख्य लिंक</h4><a href="#home">मुख्य पृष्ठ</a><a href="#services">सभी सेवाएं</a><a href="#rashifal">आज का राशिफल</a><a href="#kundli">कुंडली बनवाएं</a><a href="#dakshina">दक्षिणा</a></div>
+    <div><h4>प्रमुख सेवाएं</h4><a href="#services">कुंडली निर्माण</a><a href="#services">विवाह बाधा निवारण</a><a href="#services">पितृ शांति / नारायण बलि</a><a href="#services">वास्तु परामर्श</a><a href="#services">पुराण यज्ञ</a></div>
+    <div><h4>संपर्क</h4><a href="tel:+918091225439"><i class="fa-solid fa-phone"></i> 80912 25439</a><a href="tel:+918350973006"><i class="fa-solid fa-phone"></i> 83509 73006</a><a href="mailto:Aacharyatarun0@gmail.com" style="font-size:13px"><i class="fa-solid fa-envelope"></i> Aacharyatarun0@gmail.com</a><a>समय: 8AM - 9PM</a></div>
+  </div>
+  <div class="foot-bottom container"><span>© 2026 आचार्य तरुण ज्योतिष संस्थान • सर्वाधिकार सुरक्षित</span><span>॥ शुभं भूयात् ॥ धर्मो रक्षति रक्षितः ॥</span></div>
+</footer>
+
+<div class="floats">
+  <button class="float-btn float-top" id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fa-solid fa-arrow-up"></i></button>
+  <a class="float-btn float-call" href="tel:+918091225439"><i class="fa-solid fa-phone"></i></a>
+  <a class="float-btn float-wa" href="https://wa.me/918091225439?text=नमस्ते%20आचार्य%20जी" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+</div>
+
+<div class="modal-overlay" id="serviceModal"><div class="modal"><div class="modal-head"><h3 id="mTitle" style="color:#ffe9b5;font-size:20px">सेवा</h3><button onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button></div><div class="modal-body"><div id="mBody"></div><div style="display:flex;gap:8px;margin-top:14px"><button class="btn btn-saffron" style="flex:1;justify-content:center" id="mBookBtn"><i class="fa-solid fa-calendar-check"></i> बुक करें</button><a class="btn btn-whats" style="flex:1;justify-content:center" id="mWaBtn" target="_blank"><i class="fa-brands fa-whatsapp"></i> पूछें</a></div></div></div></div>
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('show')"><img id="lightImg" src="" alt="बड़ा चित्र"></div>
+<div id="toast"></div>
+
+<script>
+// ---------- Data ----------
+const SERVICES=[
+{n:1,t:"ज्योतिष गणना व कुंडली निर्माण",c:"jyotish",icon:"fa-solid fa-star-and-crescent",d:"जन्म तिथि-समय-स्थान से सटीक जन्म कुंडली, दशा-गोचर फल व जीवन के हर क्षेत्र का मार्गदर्शन।",full:"जन्म विवरण से लग्न, राशि, नक्षत्र, महादशा व गोचर की सूक्ष्म गणना। करियर, विवाह, संतान, स्वास्थ्य व धन हेतु शास्त्रोक्त उपाय सहित हस्तलिखित कुंडली।",price:"₹510 से",time:"30-45 मिनट"},
+{n:2,t:"हस्तरेखा (Palmistry)",c:"jyotish",icon:"fa-solid fa-hand",d:"हथेली की रेखाओं, पर्वतों व चिन्हों से भाग्य, आयु, विवाह व करियर का सटीक ज्ञान।",full:"दोनों हथेलियों के फोटो से जीवन रेखा, मस्तिष्क रेखा, हृदय रेखा, विवाह व धन रेखा का विश्लेषण। रत्न व उपाय सुझाव सहित।",price:"₹510 से",time:"20-30 मिनट"},
+{n:3,t:"वास्तु निर्देश व नियम",c:"vastu",icon:"fa-solid fa-house-chimney",d:"घर-दुकान-फैक्ट्री का वास्तु दोष निदान व बिना तोड़फोड़ सरल सुधार।",full:"16 दिशाओं का मानचित्र अध्ययन, मुख्य द्वार, रसोई, शयनकक्ष व पूजा स्थान सुधार। पिरामिड, यंत्र व रंग चिकित्सा द्वारा दोष निवारण।",price:"₹1100 से",time:"1 घंटा"},
+{n:4,t:"विवाह कार्य में अड़चन - तुरंत समाधान",c:"badha",icon:"fa-solid fa-heart",d:"रिश्ता न आना, सगाई टूटना, मांगलिक दोष, कुंडली मिलान - शीघ्र विवाह हेतु सिद्ध उपाय।",full:"कुंडली मिलान (36 गुण), मांगलिक दोष शांति, कात्यायनी व शिव-पार्वती अनुष्ठान। 1000+ विवाह सफलता के अनुभव।",price:"₹1100 से",time:"विशेष अनुष्ठान"},
+{n:5,t:"प्रेत-भूत-ग्रह बाधा निवारण",c:"badha",icon:"fa-solid fa-shield-halved",d:"ऊपरी बाधा, नजर दोष, पितृ-ग्रह पीड़ा, भय-स्वप्न - मंत्र शक्ति से पूर्ण मुक्ति।",full:"बाधा परीक्षण, हनुमत-नरसिंह कवच, बंधन-मुक्ति हवन व रक्षा यंत्र। सात्विक वैदिक विधि, कोई तामसिक क्रिया नहीं।",price:"परामर्श पर",time:"3-11 दिन"},
+{n:6,t:"मंत्र चिकित्सा व योग विज्ञान रहस्य",c:"badha",icon:"fa-solid fa-om",d:"रोग, मानसिक अशांति, नशा, नकारात्मक विचारों हेतु बीज मंत्रों से चिकित्सा।",full:"श्वास-साधना, जप-विधि, चक्र-शुद्धि व व्यक्तिगत सिद्ध मंत्र दीक्षा। नियमित अभ्यास चार्ट सहित।",price:"₹1100 से",time:"21 दिन संकल्प"},
+{n:7,t:"तंत्र-मंत्र-यंत्र सिद्धि निर्माण",c:"yagya",icon:"fa-solid fa-yin-yang",d:"श्री यंत्र, कुबेर यंत्र, वशीकरण-रक्षा यंत्र - प्राण प्रतिष्ठित व सिद्ध करके।",full:"शुभ मुहूर्त में भोजपत्र/ताम्रपत्र पर निर्माण, 11000 जप से सिद्धि, हवन व प्राण प्रतिष्ठा। घर बैठे कूरियर।",price:"₹2100 से",time:"11-21 दिन"},
+{n:8,t:"पितृ यज्ञ, हवन, पिंडदान, नारायण बलि",c:"yagya",icon:"fa-solid fa-fire",d:"पितृ दोष, अकाल मृत्यु, वंश वृद्धि बाधा हेतु गया-विधि समान फलदायी अनुष्ठान।",full:"पोथी में वर्णित मुख्य कार्य। त्रिपिंडी श्राद्ध, नारायण बलि, पिंडदान व ब्राह्मण भोजन सहित संपूर्ण विधि।",price:"₹5100 से",time:"1-3 दिन"},
+{n:9,t:"पुत्र प्राप्ति - गर्भ बंधन मुक्ति",c:"badha",icon:"fa-solid fa-baby",d:"संतान न होना, गर्भपात, गर्भ बंधन - मंत्र चिकित्सा से निश्चित पुत्र/पुत्री लाभ।",full:"संतान गोपाल मंत्र, पुत्रेष्टि जप, गर्भ रक्षा कवच व दंपत्ति दोनों की कुंडली चिकित्सा। पूर्ण गोपनीय।",price:"परामर्श पर",time:"3-9 माह संकल्प"},
+{n:10,t:"गायत्री-महामृत्युंजय पुरश्चरण",c:"yagya",icon:"fa-solid fa-book-quran",d:"24 लाख गायत्री / 1.25 लाख महामृत्युंजय - रोग, आयु व संकट निवारण महाअनुष्ठान।",full:"ब्राह्मणों द्वारा संकल्पित जप, दशांश हवन, तर्पण-मार्जन व कन्या भोजन। यजमान Online जुड़ सकते हैं।",price:"₹11000 से",time:"11-45 दिन"},
+{n:11,t:"नकारात्मक ऊर्जा निवारण",c:"badha",icon:"fa-solid fa-broom",d:"घर-व्यापार में भारीपन, कलह, धन हानि - ऊर्जा शुद्धि व कवच।",full:"नमक-नींबू-गुग्गल प्रयोग, हनुमत धूप, वास्तु शुद्धि हवन व रक्षा कील। 7 दिन में अंतर महसूस करें।",price:"₹2100 से",time:"1 दिन"},
+{n:12,t:"नवीन गृह निर्माण - संपूर्ण वास्तु",c:"vastu",icon:"fa-solid fa-compass-drafting",d:"प्लॉट चयन, भूमि पूजन, नक्शा वास्तु, द्वार-नींव मुहूर्त - A to Z मार्गदर्शन।",full:"भूमि परीक्षण, आय-व्यय गणना, 81 पद वास्तु मंडल पर नक्शा, नींव-लिंटर-प्रवेश मुहूर्त व गृह प्रवेश पूजा।",price:"₹2100 से",time:"परियोजना अवधि"},
+{n:13,t:"ऑनलाइन ज्योतिष, पूजा-हवन",c:"jyotish",icon:"fa-solid fa-video",d:"दुनिया में कहीं से भी Video Call पर परामर्श, पूजा व हवन में संकल्प।",full:"WhatsApp पर फोटो-संकल्प, Live हवन दर्शन, प्रसाद-कवच कूरियर। विदेशी यजमानों हेतु USD/UPI सुविधा।",price:"₹510 से",time:"आपके समयानुसार"},
+{n:14,t:"अठारह पुराण यज्ञ - गीता भागवत कथा",c:"yagya",icon:"fa-solid fa-book-open",d:"श्रीमद्भगवद्गीता, भागवत, देवी पुराण सहित 18 पुराण पाठ व यज्ञ।",full:"सप्ताह ज्ञान यज्ञ, मूल पाठ, हवन व भंडारा। पितरों की मुक्ति व परिवार कल्याण हेतु श्रेष्ठ। बुकिंग हेतु संपर्क करें।",price:"संपर्क करें",time:"7-9 दिन"},
+];
+const RASHIS=[
+{name:"मेष",range:"21 मार्च - 19 अप्रैल",sym:"♈",color:"लाल",hex:"#d32f2f",num:9,stars:4,career:82,love:70,health:75,text:"आज आत्मविश्वास बढ़ेगा। रुके कार्य पूर्ण होंगे। भूमि-वाहन सुख संभव। क्रोध पर नियंत्रण रखें। हनुमान चालीसा लाभकारी।",upay:"गुड़-चना हनुमान मंदिर में चढ़ाएं",mantra:"ॐ हं हनुमते नमः - 11 बार"},
+{name:"वृषभ",range:"20 अप्रैल - 20 मई",sym:"♉",color:"सफेद",hex:"#f5f5f5",num:6,stars:4,career:78,love:85,health:70,text:"धन लाभ के योग। परिवार में मांगलिक चर्चा। वाणी से कार्य सिद्ध होंगे। माता का आशीर्वाद लें।",upay:"शिवलिंग पर दूध चढ़ाएं",mantra:"ॐ नमः शिवाय - 21 बार"},
+{name:"मिथुन",range:"21 मई - 20 जून",sym:"♊",color:"हरा",hex:"#2e7d32",num:5,stars:3,career:70,love:68,health:65,text:"यात्रा लाभकारी। विद्यार्थियों को सफलता। भाई-बहनों से सहयोग। गणपति स्मरण शुभ।",upay:"दूर्वा गणेश जी को अर्पित करें",mantra:"ॐ गं गणपतये नमः - 11 बार"},
+{name:"कर्क",range:"21 जून - 22 जुलाई",sym:"♋",color:"चांदी",hex:"#90a4ae",num:2,stars:4,career:75,love:90,health:72,text:"मन प्रसन्न रहेगा। प्रेम संबंध मधुर। संपत्ति लाभ संभव। चंद्रमा को अर्घ्य दें।",upay:"चावल का दान करें",mantra:"ॐ सोम सोमाय नमः - 11 बार"},
+{name:"सिंह",range:"23 जुलाई - 22 अगस्त",sym:"♌",color:"सुनहरा",hex:"#ff8f00",num:1,stars:5,career:90,love:78,health:80,text:"प्रतिष्ठा वृद्धि। नेतृत्व क्षमता चमकेगी। नौकरी में पदोन्नति योग। सूर्य नमस्कार करें।",upay:"तांबे के लोटे से सूर्य को जल दें",mantra:"ॐ घृणि सूर्याय नमः - 12 बार"},
+{name:"कन्या",range:"23 अगस्त - 22 सितंबर",sym:"♍",color:"हरा",hex:"#388e3c",num:5,stars:4,career:84,love:72,health:78,text:"योजनाएं सफल होंगी। स्वास्थ्य में सुधार। व्यापार में नया अनुबंध। कन्या पूजन शुभ।",upay:"गाय को हरा चारा खिलाएं",mantra:"ॐ बुं बुधाय नमः - 9 बार"},
+{name:"तुला",range:"23 सितंबर - 22 अक्टूबर",sym:"♎",color:"गुलाबी",hex:"#ec407a",num:6,stars:3,career:72,love:88,health:68,text:"दांपत्य सुख बढ़ेगा। कला-सौंदर्य में रुचि। खर्च पर नियंत्रण रखें। लक्ष्मी पूजन करें।",upay:"खीर का भोग लगाएं",mantra:"ॐ श्रीं महालक्ष्म्यै नमः - 11 बार"},
+{name:"वृश्चिक",range:"23 अक्टूबर - 21 नवंबर",sym:"♏",color:"केसरिया",hex:"#ef6c00",num:9,stars:4,career:80,love:75,health:70,text:"गुप्त शत्रु परास्त। अटका धन मिलेगा। साहसिक निर्णय लाभ देंगे। बजरंगबली का ध्यान करें।",upay:"मंगलवार को सुंदरकांड पढ़ें",mantra:"ॐ अं अंगारकाय नमः - 9 बार"},
+{name:"धनु",range:"22 नवंबर - 21 दिसंबर",sym:"♐",color:"पीला",hex:"#fbc02d",num:3,stars:5,career:88,love:82,health:85,text:"भाग्य प्रबल। गुरु कृपा से बड़ी सफलता। धार्मिक यात्रा संभव। पीली वस्तु दान करें।",upay:"केले का दान / विष्णु पूजन",mantra:"ॐ बृं बृहस्पतये नमः - 19 बार"},
+{name:"मकर",range:"22 दिसंबर - 19 जनवरी",sym:"♑",color:"नीला",hex:"#1565c0",num:8,stars:3,career:74,love:65,health:72,text:"मेहनत का फल मिलेगा। धैर्य रखें। शनि कृपा हेतु सेवा करें। तेल दान शुभ।",upay:"पीपल में दीपक जलाएं",mantra:"ॐ शं शनैश्चराय नमः - 23 बार"},
+{name:"कुंभ",range:"20 जनवरी - 18 फरवरी",sym:"♒",color:"आसमानी",hex:"#0288d1",num:4,stars:4,career:79,love:73,health:76,text:"नई तकनीक से लाभ। मित्रों से सहयोग। सामाजिक प्रतिष्ठा बढ़ेगी। शिव पूजन करें।",upay:"गरीब को कंबल / अन्न दान",mantra:"ॐ नमः शिवाय - 11 बार"},
+{name:"मीन",range:"19 फरवरी - 20 मार्च",sym:"♓",color:"हल्दी",hex:"#f9a825",num:12,stars:4,career:81,love:86,health:74,text:"आध्यात्मिक उन्नति। संतान सुख। रचनात्मक कार्य में सफलता। विष्णु सहस्रनाम पढ़ें।",upay:"मछलियों को आटा खिलाएं",mantra:"ॐ नमो नारायणाय - 11 बार"},
+];
+const TESTIS=[
+{name:"रमेश ठाकुर",place:"शिमला",stars:5,text:"विवाह में 5 साल से बाधा थी। आचार्य जी के कात्यायनी अनुष्ठान के 3 माह में बेटी का रिश्ता पक्का हो गया। आज वह सुखी है। कोटि-कोटि धन्यवाद।"},
+{name:"सुनीता देवी",place:"मंडी",stars:5,text:"घर में लगातार बीमारी व कलह रहती थी। वास्तु सुधार व महामृत्युंजय हवन के बाद ऐसा लगा जैसे नया जीवन मिला। ऊर्जा ही बदल गई।"},
+{name:"अनिल वर्मा",place:"दिल्ली (Online)",stars:5,text:"Video Call पर कुंडली विश्लेषण इतना सटीक कि मैं हैरान रह गया। नौकरी का उपाय बताया, 2 माह में प्रमोशन मिला।"},
+{name:"प्रकाश चंद",place:"कुल्लू",stars:5,text:"पितृ दोष के कारण वंश वृद्धि रुक गई थी। नारायण बलि व पिंडदान के बाद पुत्र रत्न की प्राप्ति हुई। यह चमत्कार ही है।"},
+{name:"Meena Sharma",place:"Canada (Online)",stars:5,text:"विदेश से ऑनलाइन हवन करवाया। पूरा विधि-विधान Live दिखाया, प्रसाद भी भेजा। बहुत सात्विक व पारदर्शी अनुभव।"},
+];
+const FAQS=[
+{q:"क्या ऑनलाइन परामर्श उतना ही प्रभावी है?",a:"हाँ, बिल्कुल। संकल्प में आपका नाम, गोत्र व फोटो लेकर विधिवत पूजा होती है। शास्त्रों में मानसिक व नाम-संकल्प को मान्यता है। विदेश सहित 12+ देशों में यजमान जुड़े हैं।"},
+{q:"दक्षिणा पहले देनी होगी या बाद में?",a:"परामर्श की दक्षिणा बुकिंग पर, जबकि बड़े अनुष्ठान की 50% संकल्प पर व शेष पूर्णता पर। रसीद व फोटो-वीडियो प्रमाण दिया जाता है।"},
+{q:"कुंडली के लिए क्या विवरण चाहिए?",a:"जन्म तिथि, समय (जितना याद हो) व स्थान। समय न पता हो तो हस्तरेखा व प्रश्न कुंडली से निदान किया जाता है। WhatsApp पर दोनों हथेलियों की स्पष्ट फोटो भेजें।"},
+{q:"पितृ दोष / नारायण बलि कितने दिन में होती है?",a:"सामान्यतः 1-3 दिन। पहले दिन संकल्प-जप, दूसरे दिन हवन-पिंडदान व तीसरे दिन ब्राह्मण भोजन। आप स्वयं या ऑनलाइन जुड़ सकते हैं।"},
+{q:"क्या गोपनीयता रखी जाती है?",a:"100%। संतान, विवाह व बाधा संबंधी कोई जानकारी किसी से साझा नहीं की जाती। नाम गुप्त रखकर भी अनुष्ठान संभव है।"},
+{q:"संपर्क का सबसे तेज़ माध्यम क्या है?",a:"WhatsApp 80912 25439 पर 'नमस्ते' लिखकर भेजें या सीधे कॉल करें। सुबह 8 से रात 9 तक उत्तर मिलता है। अत्यावश्यक हेतु 83509 73006 पर भी कॉल करें।"},
+];
+
+// ---------- helpers ----------
+const $=id=>document.getElementById(id);
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),2800)}
+function toggleNav(force){const n=$('mainNav');if(typeof force==='boolean'){n.classList.toggle('open',force)}else n.classList.toggle('open')}
+
+// Marquee
+(function(){const items=["ॐ ज्योतिष परामर्श","कुंडली निर्माण","हस्तरेखा","वास्तु शुद्धि","विवाह बाधा निवारण","पितृ शांति","नारायण बलि","महामृत्युंजय जप","गायत्री पुरश्चरण","संतान प्राप्ति","नकारात्मक ऊर्जा निवारण","ऑनलाइन हवन"];let h="";for(let k=0;k<2;k++)items.forEach(i=>h+=`<span>✦ ${i}</span> • `);$('marqueeTrack').innerHTML=h;})();
+
+// Dates Panchang
+(function(){
+  try{
+    const now=new Date();
+    const hi= new Intl.DateTimeFormat('hi-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(now);
+    $('topDate').textContent=hi; $('hindiDate2').textContent=hi; $('rashifalDate').textContent=new Intl.DateTimeFormat('hi-IN',{day:'numeric',month:'long'}).format(now);
+    const vars=["रविवार","सोमवार","मंगलवार","बुधवार","गुरुवार","शुक्रवार","शनिवार"];
+    $('pVar').textContent=vars[now.getDay()];
+    const tithis=["प्रतिपदा","द्वितीया","तृतीया","चतुर्थी","पंचमी","षष्ठी","सप्तमी","अष्टमी","नवमी","दशमी","एकादशी","द्वादशी","त्रयोदशी","चतुर्दशी","पूर्णिमा"];
+    $('pTithi').textContent="शुक्ल पक्ष "+tithis[now.getDate()%15];
+    const naks=["अश्विनी","भरणी","रोहिणी","मृगशिरा","पुष्य","मघा","हस्त","स्वाति","अनुराधा","श्रवण","धनिष्ठा","शतभिषा"];
+    $('pNak').textContent=naks[now.getDate()%12];
+  }catch(e){}
+})();
+
+// Header scroll + active nav + counters + toTop
+window.addEventListener('scroll',()=>{
+  $('header').classList.toggle('scrolled',scrollY>10);
+  $('toTop').style.display=scrollY>600?'grid':'none';
+  document.querySelectorAll('.counter').forEach(el=>{
+    const r=el.getBoundingClientRect();
+    if(r.top<innerHeight && !el._done){el._done=true;let t=+el.dataset.target,c=0;const iv=setInterval(()=>{c+=Math.ceil(t/60);if(c>=t){c=t;clearInterval(iv)}el.textContent=c.toLocaleString('hi-IN')},30)}
+  });
+});
+(function(){
+  const secs=[...document.querySelectorAll('section[id]')];
+  const links=[...document.querySelectorAll('nav.main-nav a')];
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}})},{rootMargin:'-40% 0px -55% 0px'});
+  secs.forEach(s=>io.observe(s));
+})();
+
+// Services render
+let curFilter='all';
+function renderServices(){
+  const q=($('serviceSearch').value||'').trim();
+  const grid=$('servicesGrid');grid.innerHTML='';
+  SERVICES.filter(s=>(curFilter==='all'||s.c===curFilter)&&( !q || (s.t+s.d).includes(q))).forEach(s=>{
+    const d=document.createElement('div');d.className='s-card';
+    d.innerHTML=`<div class="s-top"></div><div class="s-num">${s.n}</div><div class="s-body"><div class="s-icon"><i class="${s.icon}"></i></div><h3>${s.t}</h3><p>${s.d}</p><div class="s-meta"><span>💰 ${s.price}</span><span>⏱ ${s.time}</span></div></div><div class="s-foot"><button class="btn-detail" onclick="openService(${s.n})">विवरण</button><button class="btn-book" onclick="openBooking('${s.t}')">बुक करें</button></div>`;
+    grid.appendChild(d);
+  });
+  if(!grid.children.length)grid.innerHTML=`<div style="grid-column:1/-1;text-align:center;background:#fff;border:1.5px dashed var(--gold);border-radius:14px;padding:26px">कोई सेवा नहीं मिली। <b>“${q}”</b> हेतु <a href="https://wa.me/918091225439?text=मुझे ${encodeURIComponent(q)} के बारे में जानना है" target="_blank" style="color:var(--maroon);font-weight:800">WhatsApp पर पूछें</a></div>`;
+  // booking select
+  const sel=$('bService');if(!sel.options.length){SERVICES.forEach(s=>{const o=document.createElement('option');o.textContent=s.t;sel.appendChild(o)})}
+}
+$('serviceSearch').addEventListener('input',renderServices);
+document.querySelectorAll('#filterPills .pill').forEach(p=>p.onclick=()=>{document.querySelectorAll('#filterPills .pill').forEach(x=>x.classList.remove('active'));p.classList.add('active');curFilter=p.dataset.f;renderServices()});
+renderServices();
+
+// Service modal
+function openService(n){
+  const s=SERVICES.find(x=>x.n===n);if(!s)return;
+  $('mTitle').textContent=s.n+". "+s.t;
+  $('mBody').innerHTML=`<div style="display:flex;gap:12px;align-items:center;margin-bottom:10px"><div class="s-icon" style="margin:0"><i class="${s.icon}"></i></div><div><b style="color:var(--maroon)">दक्षिणा: ${s.price}</b><br><small style="color:var(--muted)">अवधि: ${s.time}</small></div></div><p class="serif" style="font-size:16px;line-height:1.9">${s.full}</p><ul style="margin:12px 0 0 18px;font-size:14.5px"><li>संकल्प हेतु नाम, गोत्र व फोटो आवश्यक</li><li>ऑनलाइन / सामने - दोनों सुविधा</li><li>हवन फोटो-वीडियो प्रमाण सहित</li></ul>`;
+  $('mBookBtn').onclick=()=>{closeModal();openBooking(s.t)};
+  $('mWaBtn').href=`https://wa.me/918091225439?text=${encodeURIComponent("नमस्ते, मुझे "+s.t+" की जानकारी चाहिए")}`;
+  $('serviceModal').classList.add('show');
+}
+function closeModal(){$('serviceModal').classList.remove('show')}
+$('serviceModal').addEventListener('click',e=>{if(e.target.id==='serviceModal')closeModal()});
+
+// Lightbox
+function openLightbox(src){$('lightImg').src=src;$('lightbox').classList.add('show')}
+
+// Rashifal
+let curRashi=0;
+(function(){
+  const tabs=$('rashiTabs');
+  RASHIS.forEach((r,i)=>{const b=document.createElement('div');b.className='rashi-tab'+(i===0?' active':'');b.innerHTML=`<div class="sym">${r.sym}</div><small>${r.name}</small>`;b.onclick=()=>selectRashi(i);tabs.appendChild(b)});
+  selectRashi(new Date().getDate()%12);
+})();
+function selectRashi(i){
+  curRashi=i;const r=RASHIS[i];
+  document.querySelectorAll('.rashi-tab').forEach((t,j)=>t.classList.toggle('active',j===i));
+  $('rashiIcon').textContent=r.sym;$('rashiName').textContent=r.name;$('rashiRange').textContent=r.range;
+  $('rashiText').textContent=r.text;$('rashiStars').textContent='★'.repeat(r.stars)+'☆'.repeat(5-r.stars);
+  $('rColor').textContent=r.color;$('rColorBox').style.background=r.hex;$('rColorBox').style.border='1px solid #ccc';
+  $('rNum').textContent=r.num;$('rUpay').textContent=r.upay;$('rMantra').textContent=r.mantra;
+  [['Career',r.career],['Love',r.love],['Health',r.health]].forEach(([k,v])=>{$('b'+k).style.width='0';$('v'+k).textContent=v+'%';setTimeout(()=>$('b'+k).style.width=v+'%',100)});
+}
+
+// Kundli generator
+const LAGNAS=["मेष","वृषभ","मिथुन","कर्क","सिंह","कन्या","तुला","वृश्चिक","धनु","मकर","कुंभ","मीन"];
+const NAKS=["अश्विनी","भरणी","कृत्तिका","रोहिणी","मृगशिरा","आर्द्रा","पुनर्वसु","पुष्य","मघा","उत्तराफाल्गुनी","हस्त","चित्रा","स्वाति","विशाखा","अनुराधा","मूल","श्रवण","धनिष्ठा","शतभिषा","रेवती"];
+function hashStr(s){let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))%100000;return h}
+function generateKundli(){
+  const name=$('kName').value.trim(),dob=$('kDob').value;
+  let ok=true;
+  $('eName').style.display=name?'none':'block';if(!name)ok=false;
+  $('eDob').style.display=dob?'none':'block';if(!dob)ok=false;
+  if(!ok){toast('कृपया नाम व जन्म तिथि भरें');return}
+  const h=hashStr(name+dob+($('kTime').value||''));
+  const lagna=LAGNAS[h%12],rashi=LAGNAS[(h>>2)%12],nak=NAKS[h%20];
+  const dashas=["केतु","शुक्र","सूर्य","चंद्र","मंगल","राहु","गुरु","शनि","बुध"];
+  const dasha=dashas[h%9]+" महादशा";
+  $('krName').textContent=name;$('krLagna').textContent=lagna+" लग्न";$('krRashi').textContent=rashi;$('krNak').textContent=nak;$('krDasha').textContent=dasha;
+  $('krPred').innerHTML=`<b>${name} जी,</b> ${lagna} लग्न व ${rashi} राशि के प्रभाव से आगामी समय <b>उन्नतिकारक</b> है। ${nak} नक्षत्र में जन्म से गुरु-बुध शुभ हैं। वर्तमान ${dasha} में <b>मंत्र जप व शनिवार दान</b> विशेष लाभ देगा। सटीक दशा-अंतर्दशा हेतु पूर्ण कुंडली बनवाएं।`;
+  drawNorth(h);
+  $('kundliPlaceholder').style.display='none';$('kundliResult').style.display='block';
+  $('kundliResult').scrollIntoView({behavior:'smooth',block:'center'});
+  toast('कुंडली झलक तैयार है');
+}
+function drawNorth(h){
+  const svg=$('northChart');const planets=["सू","चं","मं","बु","गु","शु","श","रा","के","ल"];
+  // positions deterministic 1-12
+  let pos=planets.map((p,i)=>(h>>(i%5)+i*2)%12+1);
+  // North indian diamond coords: 12 houses fixed polygons
+  const houses={1:[150,150],2:[150,55],3:[80,85],4:[55,150],5:[80,215],6:[150,245],7:[150,150],8:[150,55],9:[220,85],10:[245,150],11:[220,215],12:[150,245]};
+  // simpler: draw classic chart
+  svg.innerHTML=`<rect x="5" y="5" width="290" height="290" fill="#fffdf4" stroke="#5e0c0c" stroke-width="2" rx="8"/>
+  <line x1="5" y1="5" x2="295" y2="295" stroke="#5e0c0c" stroke-width="1.5"/><line x1="295" y1="5" x2="5" y2="295" stroke="#5e0c0c" stroke-width="1.5"/>
+  <rect x="75" y="75" width="150" height="150" fill="none" stroke="#5e0c0c" stroke-width="1.5" transform="rotate(45 150 150)"/>
+  ${[1,2,3,4,5,6,7,8,9,10,11,12].map(n=>{
+    const coords={1:[150,135],2:[150,45],3:[55,75],4:[35,150],5:[55,225],6:[150,255],7:[150,165],8:[150,45],9:[245,75],10:[265,150],11:[245,225],12:[150,255]}[n];
+    // planet short for house n (first match)
+    const idx=pos.indexOf(n);
+    const txt= idx>=0? planets[idx%planets.length] : '';
+    return `<text x="${coords[0]}" y="${coords[1]}" text-anchor="middle" font-size="13" font-weight="800" fill="#5e0c0c">${txt} ${n}</text>`
+  }).join('')}
+  <text x="150" y="152" text-anchor="middle" font-size="22" fill="#c9a227" font-weight="900">ॐ</text>`;
+}
+function shareKundli(){
+  const t=`नमस्ते, मैं ${$('kName').value} (${$('krRashi').textContent}, ${$('krLagna').textContent}) - मुझे पूर्ण कुंडली बनवानी है।`;
+  window.open(`https://wa.me/918091225439?text=${encodeURIComponent(t)}`,'_blank');
+}
+
+// Testimonials
+let tIdx=0,tTimer;
+(function(){
+  const tr=$('testiTrack'),dots=$('testiDots');
+  TESTIS.forEach((t,i)=>{
+    const d=document.createElement('div');d.className='testi';
+    d.innerHTML=`<div class="stars">${'★'.repeat(t.stars)}</div><p class="serif" style="font-size:17.5px;margin:12px 0">“${t.text}”</p><b style="color:var(--maroon)">— ${t.name}</b><br><small style="color:var(--muted)">${t.place} • सत्यापित यजमान ✓</small>`;
+    tr.appendChild(d);
+    const s=document.createElement('span');if(i===0)s.classList.add('active');s.onclick=()=>goTesti(i);dots.appendChild(s);
+  });
+  autoTesti();
+})();
+function goTesti(i){tIdx=(i+TESTIS.length)%TESTIS.length;$('testiTrack').style.transform=`translateX(-${tIdx*100}%)`;document.querySelectorAll('#testiDots span').forEach((d,j)=>d.classList.toggle('active',j===tIdx))}
+function moveTesti(d){goTesti(tIdx+d);restartAuto()}
+function autoTesti(){tTimer=setInterval(()=>goTesti(tIdx+1),4500)}
+function restartAuto(){clearInterval(tTimer);autoTesti()}
+
+// FAQ
+(function(){const f=$('faqList');FAQS.forEach(o=>{const d=document.createElement('div');d.className='faq-item';d.innerHTML=`<div class="faq-q">${o.q}<i class="fa-solid fa-chevron-down"></i></div><div class="faq-a">${o.a}</div>`;d.querySelector('.faq-q').onclick=()=>{document.querySelectorAll('.faq-item').forEach(x=>{if(x!==d)x.classList.remove('open')});d.classList.toggle('open')};f.appendChild(d)})})();
+
+// Booking
+function openBooking(service){
+  if(service){const sel=$('bService');[...sel.options].forEach(o=>{if(o.text===service||o.text.includes(service.split(' ')[0]))sel.value=o.value||o.text}); // try match
+    // fallback: set to service if exists else first
+    let found=[...sel.options].some(o=>o.text===service); if(!found){const op=document.createElement('option');op.textContent=service;sel.appendChild(op);sel.value=op.value}
+    else sel.value=service;
+  }
+  document.getElementById('booking').scrollIntoView({behavior:'smooth',block:'center'});
+  toast('बुकिंग फॉर्म में सेवा चुन ली गई');
+  // highlight
+  document.getElementById('booking').style.boxShadow='0 0 0 4px rgba(255,138,0,.4)';setTimeout(()=>document.getElementById('booking').style.boxShadow='',1800);
+}
+function submitBooking(){
+  const n=$('bName').value.trim(),p=$('bPhone').value.trim();
+  let ok=true;
+  $('beName').style.display=n?'none':'block';if(!n)ok=false;
+  const valid=/^[6-9]\d{9}$/.test(p);$('bePhone').style.display=valid?'none':'block';if(!valid)ok=false;
+  if(!ok){toast('कृपया सही नाम व 10 अंकों का मोबाइल भरें');return}
+  const s=$('bService').value,m=$('bMode').value,d=$('bDate').value||'जल्द से जल्द',t=$('bTime').value,msg=$('bMsg').value||'-';
+  const box=$('bookingSuccess');box.style.display='block';
+  box.innerHTML=`✅ <b>धन्यवाद ${n} जी!</b> आपकी <b>${s}</b> हेतु बुकिंग प्राप्त हुई (${d}, ${t}, ${m})। हम <b>${p}</b> पर शीघ्र कॉल करेंगे।<br><div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><a href="https://wa.me/918091225439?text=${encodeURIComponent(`नमस्ते, मैं ${n} (${p}) - ${s} बुक करना है। तिथि:${d} समय:${t} माध्यम:${m} समस्या:${msg}`)}" target="_blank" class="btn btn-whats" style="padding:8px 16px;font-size:14px"><i class="fa-brands fa-whatsapp"></i> WhatsApp पर कन्फर्म करें</a><a href="mailto:Aacharyatarun0@gmail.com?subject=${encodeURIComponent('बुकिंग: '+s+' - '+n)}&body=${encodeURIComponent(`नाम:${n}\nफोन:${p}\nसेवा:${s}\nतिथि:${d}\nसमय:${t}\nसमस्या:${msg}`)}" class="btn btn-outline" style="padding:8px 16px;font-size:14px"><i class="fa-solid fa-envelope"></i> ईमेल भेजें</a></div>`;
+  box.scrollIntoView({behavior:'smooth',block:'center'});
+  toast('बुकिंग सफल! WhatsApp पर कन्फर्म करें');
+}
+
+// Bell sound via WebAudio
+let audioCtx=null;
+function playBell(){
+  try{
+    audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();
+    const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+    o.type='sine';o.frequency.setValueAtTime(520,audioCtx.currentTime);o.frequency.exponentialRampToValueAtTime(130,audioCtx.currentTime+2.5);
+    g.gain.setValueAtTime(.35,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+3);
+    o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+3);
+    $('bellLabel').textContent='🔔 शुभ घंटनाद...';setTimeout(()=>$('bellLabel').textContent='मंदिर घंटी बजाएं',2500);
+    toast('🔔 शुभं भूयात् - कल्याण हो');
+  }catch(e){toast('🔔 शुभं भूयात्')}
+}
+
+// Floating Om particles in hero
+(function(){
+  const hero=document.querySelector('.hero');
+  setInterval(()=>{
+    if(document.hidden)return;
+    const s=document.createElement('span');s.className='om-float';s.textContent=Math.random()>.5?'ॐ':'✦';
+    s.style.left=Math.random()*90+'%';s.style.bottom='0';s.style.fontSize=(14+Math.random()*26)+'px';s.style.animationDuration=(6+Math.random()*5)+'s';
+    hero.appendChild(s);setTimeout(()=>s.remove(),11000);
+  },1800);
+})();
+
+// Preloader
+window.addEventListener('load',()=>{setTimeout(()=>$('preloader').classList.add('done'),900)});
+setTimeout(()=>$('preloader').classList.add('done'),3500);
+
+// close mobile nav on link click
+document.querySelectorAll('nav.main-nav a').forEach(a=>a.addEventListener('click',()=>toggleNav(false)));
+</script>
+</body>
+</html>
